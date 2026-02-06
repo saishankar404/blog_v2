@@ -1,47 +1,46 @@
 <!doctype html>
 <html lang="en" class="light">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="preload" as="image" href="/sai.jpeg" />
-  <title>Sai Shankar | Designer & Developer</title>
-  <script>
-    (function () {
-      var storageKey = "blog-theme";
-      var defaultTheme = "light";
-      var theme;
-      try {
-        theme = localStorage.getItem(storageKey) || defaultTheme;
-      } catch (e) {
-        theme = defaultTheme;
-      }
+<meta charset="UTF-8" />
+<link rel="preload" as="image" href="/sai.jpeg" />
+<title>Sai Shankar | Designer & Developer</title>
+<script>
+  (function () {
+    var storageKey = "blog-theme";
+    var defaultTheme = "light";
+    var theme;
+    try {
+      theme = localStorage.getItem(storageKey) || defaultTheme;
+    } catch (e) {
+      theme = defaultTheme;
+    }
 
-      var root = document.documentElement;
-      root.classList.remove("light", "dark");
+    var root = document.documentElement;
+    root.classList.remove("light", "dark");
 
-      if (theme === "system") {
-        var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        root.classList.add(systemTheme);
-      } else {
-        root.classList.add(theme);
-      }
-    })();
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    if (theme === "system") {
+      var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      root.classList.add(systemTheme);
+    } else {
+      root.classList.add(theme);
+    }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>saishankar-blog</title>
-  <meta name="description" content="saishankar-blog" />
-  <meta name="author" content="saishankar-blog" />
+<meta name="description" content="Sai Shankar - Designer & Developer Portfolio and Blog" />
+<meta name="author" content="Sai Shankar" />
 
 
-  <meta property="og:title" content="saishankar-blog" />
-  <meta property="og:description" content="saishankar-blog" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<meta property="og:title" content="Sai Shankar | Designer & Developer" />
+<meta property="og:description" content="Sai Shankar - Designer & Developer Portfolio and Blog" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/sai.jpeg" />
+<meta property="og:image:alt" content="Sai Shankar Portfolio Cover" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@saishankar-blog" />
-  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@saishankar" />
+<meta name="twitter:image" content="/sai.jpeg" />
 </head>
 
 <body>
