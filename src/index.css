@@ -1,0 +1,248 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 50 10% 25%;
+
+    --card: 40 25% 98%;
+    --card-foreground: 50 10% 25%;
+
+    --popover: 40 25% 98%;
+    --popover-foreground: 50 10% 25%;
+
+    --primary: 50 10% 25%;
+    --primary-foreground: 40 20% 96%;
+
+    --secondary: 40 15% 91%;
+    --secondary-foreground: 50 10% 25%;
+
+    --muted: 40 15% 91%;
+    --muted-foreground: 50 8% 50%;
+
+    --accent: 40 15% 91%;
+    --accent-foreground: 50 10% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 20% 96%;
+
+    --border: 40 12% 88%;
+    --input: 40 12% 88%;
+    --ring: 50 10% 25%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 40 18% 94%;
+    --sidebar-foreground: 50 8% 45%;
+    --sidebar-primary: 50 10% 25%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 40 12% 88%;
+    --sidebar-accent-foreground: 50 10% 25%;
+    --sidebar-border: 40 12% 86%;
+    --sidebar-ring: 50 10% 25%;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 70%;
+
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 60%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* iOS-style squircle */
+  .squircle {
+    border-radius: 22% / 22%;
+  }
+
+  /* Dotted underline link style */
+  .dotted-link {
+    @apply relative inline-block;
+  }
+
+  .dotted-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full;
+    border-bottom: 1.5px dotted hsl(var(--muted-foreground));
+    opacity: 0.5;
+  }
+
+  .dotted-link:hover::after {
+    opacity: 1;
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.5s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  /* Hover scale */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-0.5;
+  }
+
+  /* Row hover effect */
+  .row-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .row-hover:hover {
+    @apply bg-secondary/50;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prose styles for blog content */
+.prose {
+  @apply text-foreground leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-8 mb-3;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-2;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose a {
+  @apply dotted-link text-foreground;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-2 border-muted-foreground/30 pl-4 italic text-muted-foreground my-4;
+}
+
+.prose code {
+  @apply bg-secondary px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-secondary p-4 rounded-xl overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose img {
+  @apply rounded-xl my-6;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
