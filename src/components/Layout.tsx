@@ -24,16 +24,16 @@ export function Layout({ children }: LayoutProps) {
       {/* Mobile Header */}
       <header className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="flex items-center justify-between px-4 py-3">
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 -ml-2 text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-          
+
           <span className="text-sm font-medium text-foreground">sai</span>
-          
+
           <ThemeToggle />
         </div>
       </header>
@@ -81,14 +81,14 @@ export function Layout({ children }: LayoutProps) {
                   </motion.div>
                 );
               })}
-              
+
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 className="pt-8 px-4"
               >
-                <p className="text-xs text-muted-foreground">build 1.06</p>
+                <p className="text-xs text-muted-foreground">build 1.01</p>
               </motion.div>
             </motion.nav>
           </motion.div>
@@ -127,7 +127,7 @@ export function Layout({ children }: LayoutProps) {
 
         {/* Footer */}
         <div className="p-4 border-t border-border flex items-center justify-between">
-          <p className="text-xs text-muted-foreground">build 1.06</p>
+          <p className="text-xs text-muted-foreground">build 1.01</p>
           <ThemeToggle />
         </div>
       </aside>
